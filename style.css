@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #2e2d2d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    background-color: #181717;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    user-select: none;
+    border: 2px solid #000;
+}
+
+.game-container .game-display {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+}
+
+.comp-response img {
+    transform: rotate(90deg);
+}
+
+
+.human-response img {
+    transform: rotate(-90deg) scaleX(-1);
+}
+
+
+.game-container .response-text {
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 0px 30px 0px;
+}
+
+.game-container .game-option {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in;
+    user-select: none;
+}
+
+.option p {
+    color: #fff;
+    margin-top: 10px;
+    opacity: .6;
+    transition: all 0.3s ease-in;
+}
+
+.comp-response img,
+.human-response img,
+.option img {
+    width: 70px;
+}
+
+.option img {
+    width: 40px;
+    opacity: .6;
+    transition: all 0.3s ease-in;
+    user-select: none;
+}
+
+.option:hover > p {
+    opacity: 1;
+}
+
+
+.option img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.comp {
+    animation: comp-hand 3s ease-in-out;
+}
+
+.user {
+    transform: rotate(-90deg) scaleX(-1);
+    animation: human-hand 3s ease-in-out;
+}
+
+@keyframes comp-hand {
+    0% {
+        transform: rotate(90deg) translateX(0);
+    }
+
+    25% {
+        transform: rotate(110deg) translateX(5px);
+    }
+
+    50% {
+        transform: rotate(90deg) translateX(-5px);
+    }
+
+    75% {
+        transform: rotate(110deg) translateX(5px);
+    }
+
+    100% {
+        transform: rotate(90deg) translateX(0);
+    }
+}
+
+@keyframes human-hand {
+    0% {
+        transform: rotate(-90deg) scaleX(-1) translateY(0);
+    }
+
+    25% {
+        transform: rotate(-110deg) scaleX(-1) translateY(-5px);
+    }
+
+    50% {
+        transform: rotate(-90deg) scaleX(-1) translateY(5px);
+    }
+
+    75% {
+        transform: rotate(-110deg) scaleX(-1) translateY(-5px);
+    }
+
+    100% {
+        transform: rotate(-90deg) scaleX(-1) translateY(0);
+    }
+}
+
